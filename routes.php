@@ -52,7 +52,11 @@ $routes = [
     
     "logout" => "LogoutController",
     
-    "forget" => "ForgetPassController"
+    "forget" => "ForgetPassController",
+
+    //php 2
+    "file" => "FileController"
+
    // 'about' => 'controllers/about.php',
 
     //'contact' => 'controllers/contact.php',
@@ -72,6 +76,8 @@ $routes = [
         "forget" => "ForgetPassController",
 
         "notes" => "NotesController",
+
+        "file"=>"FileController"
         
         ]
 ];
