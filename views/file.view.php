@@ -21,7 +21,7 @@
             <?php else:?>
                 <td> <?= $file?> </td>
                 <td> <?= $file?> </td>
-                <td> <a href = "file/delete" ><button> Delete </button> </a></td>
+                <td> <a href = "/file/delete?name=<?=$file?>" ><button onclick="confirmDelete(this.id)" id="<?=$file?>"> Delete </button> </a></td>
             <?php endif;?>
     </tr>
     <?php endforeach;?>
@@ -36,3 +36,16 @@
 <input type= "file" name="fileToUpload" id ="fileToUpload">
 <button type = "submit"> Upload </button>
 </form>
+
+
+
+<script>
+
+    function confirmDelete(filename)
+    {
+        if(confirm('please confirm deletion of the' + filename))
+        {
+            window.location.replace('delete?name=' +filename);
+        }
+    }
+</script>

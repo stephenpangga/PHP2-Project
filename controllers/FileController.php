@@ -45,7 +45,16 @@ class FileController extends Controller
 
     public function delete()
     {
+        $user= Session::get('user')->getName();
+        $userId=Session::get('user')->getId();
+
+        $basedir = 'filemanager/.'.$userId.'.id.'.$user.'.-folder/';
+        $filename = $_GET['name'];
+
+        unlink($basedir . $filename);
+
         echo "deleting file";
+        return self::view('/file');
     }
 }
 
