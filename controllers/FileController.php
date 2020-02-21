@@ -9,7 +9,12 @@ class FileController extends Controller
 
     public function upload()
     {
-        echo "time to upload";
+        echo "uploading the file";
+    }
+
+    public function delete()
+    {
+        echo "deleting file";
     }
 }
 

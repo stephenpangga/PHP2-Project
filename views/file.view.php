@@ -13,7 +13,7 @@
     <tr>
         <td> filename </td>
         <td> file type </td>
-        <td> button </td>
+        <td> <button> <a href = "file/delete"> Delete </button> </td>
     </tr>
 </table>
 </body>
