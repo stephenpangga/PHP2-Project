@@ -19,7 +19,7 @@ input[type=text], input[type=password]
   box-sizing: border-box;
 }
 button {
-  background-color: #4CAF50;
+  background-color: #551169;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -66,7 +66,7 @@ if(isset($_GET['error']))
     <input type ="text" name="email"> </input> </br>
     Password: </br>
     <input type = "password" name="password"> </input> </br>
-    <button type = "login-submit"> Sign </button>
+    <button type = "login-submit"> Login </button>
 
     Don't have an account <a href ="/signup"> sign up </a> now?
     </br>
