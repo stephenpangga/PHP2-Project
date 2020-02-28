@@ -33,12 +33,10 @@
 //<form name= "upload" method = "POST" action = "/file/upload" enctype="multipart/form-data">
 ?>
 
-<form  method = "POST" action = "/file/upload" enctype="multipart/form-data">
+<form name="myForm" action="/file/upload" onsubmit="return validateForm()" method="POST" enctype="multipart/form-data">
 <input type= "file" name="fileToUpload" id ="fileToUpload">
 <button type = "submit" > Upload </button>
 </form>
-
-
 
 <script>
 
@@ -46,16 +44,18 @@
     {
         if(confirm('please confirm deletion of the' + filename))
         {
+            //the last part of the link is the name of the file to be sent as parameter
             window.location.replace('/file/delete/' +filename);
         }
     }
-
-    function upload()
+    function validateForm() 
     {
-        const file = document.getElementById('fileToUpload')
-        if(empty(file))
+        var x = document.forms["myForm"]["fileToUpload"].value;
+        if (x == "") 
         {
-            alert('please insert a file');
+            alert("Please choose a file");
+        return false;
         }
     }
+
 </script>
