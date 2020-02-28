@@ -11,6 +11,7 @@
         </br>
         <button> edit </button>
         <button> delete </button>
+        </br>
     <?php endforeach;?>
 <?php endif;?>
  

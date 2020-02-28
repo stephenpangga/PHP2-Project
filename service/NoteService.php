@@ -43,6 +43,18 @@ class NoteService
         return $notesObj;
     }
 
+    public function storeNote($title, $text)
+    {
+        $user = Session::get('user')->getId();
+        $sql = "INSERT INTO notes (`userId`, `title`, `text`) VALUES
+        (:user, :title, :txt)";
+
+        $params = [":user"=>$user,
+        ":title"=>$title,
+        ":txt"=>$text];
+
+        Container::getKey('db')->Insert($sql, $params);
+    }
     //need to make one for editing
 
     //need to make one for deleting

@@ -27,14 +27,22 @@ class NotesController extends Controller
 
     public function addnote()
     {
-        echo 'going to the add note page';
+        //echo 'going to the add note page';
 
         return self::view("addnotes");
     }
 
+    
     public function insert()
     {
         echo "added the new note";
+
+        $title = $_POST['title'];
+        $text = $_POST['text'];
+        NoteService::storeNote($title, $text);
+
+        //return self::view("content");
+        header("Location: /notes");
     }
 }
 

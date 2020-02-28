@@ -38,12 +38,36 @@ button:hover {
 
 <h1> Add Note </h1>
 <div class = "note-form">
-    <form method = "POST" action = "/notes/insert">
+    <form name = "noteForm" onsubmit="return validateForm()" method = "POST" action = "/notes/insert">
         <!--Name: <input name="name"> </input> </br>-->
         Title of the note: </br>
-        <input type ="text" name="email"> </input> </br>
+        <input type ="text" name="title" required> </input> </br>
         Text </br>
-        <input type = "text" name="password"> </input> </br>
+        <input type = "text" name="text" required> </input> </br>
         <button type = "notes-submit"> Save</button>
     </form>
 </div>
+
+
+
+<script>
+
+  function validateForm() 
+    {
+        var text = document.forms["noteForm"]["text"].value;
+        var title = document.forms["noteForm"]["title"].value;
+        if ((title == "") && (text ==""))
+        {
+          alert("Please fill in the fields");
+          return false;
+        }
+        else if (text =="")
+        {
+          return true;
+        }
+        else if (title =="")
+        {
+          return true;
+        }
+    }
+</script>
