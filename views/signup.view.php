@@ -30,7 +30,7 @@ button:hover {
   opacity: 0.8;
 }
 
-.signupform, h1
+.signupform, h1, .signuperror
 {
     text-align:center;
     /*
@@ -49,7 +49,6 @@ button:hover {
 
 <h1 class = "RegistrationTitle"> Registration Form</h1>
 </br>
-
 <?php
 if (isset($_GET['error'])) {
     if(($_GET['error'] == "emptyfields")) {
@@ -71,18 +70,54 @@ if (isset($_GET['error'])) {
         echo' <p class="signuperror"> Email already used! Please use another email</p>';
     }
 }
-?>  
+?>
 <div class = "signupform">
-    <form method = "POST" action = "signup/register">
-
+    <form name = "registerForm" method = "POST" action = "signup/register">
         Name: </br>
-        <input type = "text" name="name"> </input> </br>
+        <input type = "text" name="name" > </input> </br>
         E-mail: </br>
         <input type = "text" name="email"> </input> </br>
         Password: </br>
         <input type = "text" name="password"> </input> </br>
         Re-Type Password: </br>
-        <input type = "text" name="rpassword"> </input> </br>
+        <input type = "text" name="rpassword" > </input> </br>
         <button type="submit"> Sign Up </button>
     </form>
 </div>
+
+
+<script>
+var name = document.forms["registerForm"]["name"].value;
+var email = document.forms["registerForm"]["email"].value;
+var pass = document.forms["registerForm"]["password"].value;
+var repass = document.forms["registerForm"]["rpassword"].value;
+
+function validateForm()
+{
+    if (( name == "") && ( email =="") && (pass == "") && (repass == ""))
+    {
+        alert("FIll in the Fields before pressing the button");
+        return false;
+    }
+    else if (repass == "")
+    {
+        alert("please re enter password");
+        return false;
+    }
+}
+
+//validate email
+function validateEmail()
+{
+    var regx = /^([a-zA-Z0-9\.-]+)@([a-zA-Z0-9\.-]+)$/;
+    if(regx.match(email))
+    {
+        alert("itworks?");
+        return true;
+    }
+}
+//validate fields
+
+//validate passwords
+
+</script>

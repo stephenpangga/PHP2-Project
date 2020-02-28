@@ -77,9 +77,9 @@ button:hover {
 
 
 <script>
-function validateForm() 
+    function validateForm() 
     {
-        //email
+      //email
         var x = document.forms["loginForm"]["email"].value;
         //password
         var y = document.forms["loginForm"]["password"].value;
@@ -98,5 +98,4 @@ function validateForm()
           return true;
         }
     }
-
 </script>
