@@ -43,18 +43,27 @@ class FileController extends Controller
         
     }
 
-    public function delete()
+    public function delete($filename)
     {
         $user= Session::get('user')->getName();
         $userId=Session::get('user')->getId();
 
         $basedir = 'filemanager/.'.$userId.'.id.'.$user.'.-folder/';
-        $filename = $_GET['name'];
+        
+        //$filename = $_GET['name'];
 
-        unlink($basedir . $filename);
-
-        echo "deleting file";
-        return self::view('/file');
+        //if the file doesn't exist, just return to the page. to avoid warning that object that does not exist.
+        if(empty($filename))
+        {
+            return self::view('/file');
+        }
+        else
+        {
+            unlink($basedir . $filename);
+            //echo "deleting file";
+            //return self::view('/file');
+            header("Location: /file");
+        }        
     }
 }
 
