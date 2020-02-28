@@ -84,7 +84,7 @@ button:hover {
         //password
         var y = document.forms["loginForm"]["password"].value;
 
-        if ((x == "") || (y ==""))
+        if ((x == "") && (y ==""))
         {
             alert("Please Fill in your Credentials");
             return false;

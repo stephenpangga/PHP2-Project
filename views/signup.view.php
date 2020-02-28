@@ -72,7 +72,7 @@ if (isset($_GET['error'])) {
 }
 ?>
 <div class = "signupform">
-    <form name = "registerForm" method = "POST" action = "signup/register">
+    <form name = "registerForm" onsubmit = "return validateForm()" method = "POST" action = "signup/register">
         Name: </br>
         <input type = "text" name="name" > </input> </br>
         E-mail: </br>
@@ -87,22 +87,31 @@ if (isset($_GET['error'])) {
 
 
 <script>
-var name = document.forms["registerForm"]["name"].value;
-var email = document.forms["registerForm"]["email"].value;
-var pass = document.forms["registerForm"]["password"].value;
-var repass = document.forms["registerForm"]["rpassword"].value;
+
 
 function validateForm()
 {
+    var name = document.forms["registerForm"]["name"].value;
+    var email = document.forms["registerForm"]["email"].value;
+    var pass = document.forms["registerForm"]["password"].value;
+    var repass = document.forms["registerForm"]["rpassword"].value;
+    /*
     if (( name == "") && ( email =="") && (pass == "") && (repass == ""))
     {
-        alert("FIll in the Fields before pressing the button");
+        alert("FIll in the Fields before pressing the button" + name);
         return false;
     }
-    else if (repass == "")
+    */
+    if((empty(repass)) &&(!empty(name))&&(!empty(email))&&(!empty(pass)))
     {
-        alert("please re enter password");
+        alert("please re enter password " + name);
         return false;
+    }
+    //if the passwords and repeat password are not the same
+    if (repass != pass)
+    {
+        alert("password and re-type password do not match");
+        return false
     }
 }
 
