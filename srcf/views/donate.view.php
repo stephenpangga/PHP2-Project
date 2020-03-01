@@ -5,10 +5,11 @@ Would be nice if you donate for the imporvement of the website. Would really hel
 
 <form name = "donateForm" method = "POST" action = "pay/paying">
     Amount: </br>
-    <input type ="text" name="amount" required> </input> </br>
+    <input type ="text" name="amount" pattern= "^\d+\.\d{2}$" required> </input> </br>
+    Example Input: 10.00
     Description </br>
     <input type = "text" name="description" required> </input> </br>
-    <button type = "submit"> Pay </button>
+    <button type = "submit"> Donate </button>
 </form>
 
 

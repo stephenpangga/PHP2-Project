@@ -26,7 +26,7 @@ class PaymentController extends Controller
         $payment = $mollie->payments->create([
             "amount" => [
                 "currency" => "EUR",
-                "value" => "10.00"
+                "value" => "$amount"
             ],
             "description" => "thank you for donating to my heroine addiction",
             "redirectUrl" => "https://629860.infhaarlem.nl/"
