@@ -50,7 +50,8 @@ class LoginController extends Controller
                     }
                     else
                     {
-                        echo 'WRONG PASS WTF';
+                        header("Location: /login?error=nouser");
+                        //echo 'WRONG PASS WTF';
                        // header("Location: /login?error=wrongpass");
                     }
                     /*

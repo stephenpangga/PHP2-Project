@@ -15,16 +15,16 @@ abstract class Controller
         //session_start();
         // The general content of pages is structured below
         //head
-        require "views/partials/head.php";
+        require "src/views/partials/head.php";
         
         // navigation
-        require "views/partials/navigation.php";
+        require "src/views/partials/navigation.php";
 
         // Require the requested view depending on the needed page.
-        require "views/{$viewFile}.view.php";
+        require "src/views/{$viewFile}.view.php";
 
 
         //footer
-        require "views/partials/footer.php";
+        require "src/views/partials/footer.php";
     }
 }

@@ -6,7 +6,7 @@ class Request
     public static function uri()
     {
         //refernce: https://www.php.net/manual/en/function.parse-url.php
-
+        
         $url =  trim(
             parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/'
         );
@@ -15,6 +15,7 @@ class Request
         {
             $uri = [];
         }
+        
         return $uri;
         /*
         return trim(

@@ -30,37 +30,19 @@ class Router
     public function get(string $uri, string $controller)
     {
         //this means 'uri' => 'controllers/singup.php'
-        $this->routes['GET'][$uri] = $controller;
+        $this->routes["GET"][$uri] = $controller;
     }
 
     //post request
     public function post(string $uri, string $controller)
     {
         //this means 'uri' => 'controllers/singup.php'
-        $this->routes['POST'][$uri] = $controller;
+        $this->routes["POST"][$uri] = $controller;
     }
 
-    public function direct(array $uri, string $requestType)
+    public function direct(array $uri, $requestType)
     {
-        /*
-        //example.com/about
-        //requesttype is to see if its a get or post method
-        if (array_key_exists($uri, $this->routes[$requestType]))
-        {
-            //return $this->routes[$uri];
-
-            return $this->routes[$requestType][$uri];
-
-            //epsiode 23
-            
-            //return $this->callFunction(
-            //    ...explode('@', $this->routes[$requestType][$uri])
-            //);
-            
-            
-        }
-        throw new Exception("no available route for this URL.");
-        */
+        //example: stephen.nl/controller/method/parameter
 
         if (array_key_exists($uri[0], $this->routes[$requestType])) {
             
@@ -105,7 +87,7 @@ class Router
 
     }
     
-    protected function callMethod($controller, $method, $parameter)
+    protected function callMethod($controller, $method, $parameter="")
     {
         $controller = new $controller;
         return $controller->$method($parameter);
