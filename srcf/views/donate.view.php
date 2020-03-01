@@ -7,6 +7,13 @@ Would be nice if you donate for the imporvement of the website. Would really hel
     Amount: </br>
     <input type ="text" name="amount" required> </input> </br>
     Description </br>
-    <input type = "password" name="description" required> </input> </br>
+    <input type = "text" name="description" required> </input> </br>
     <button type = "submit"> Pay </button>
 </form>
+
+
+
+<script>
+
+
+</script>

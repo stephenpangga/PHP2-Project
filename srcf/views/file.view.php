@@ -13,7 +13,7 @@
     <?php 
         $user= Session::get('user')->getName();
         $userId=Session::get('user')->getId();
-            $files = scandir("filemanager/.$userId.id.$user.-folder");
+            $files = scandir("srcf/filemanager/.$userId.id.$user.-folder");
     foreach($files as $file):
     //i need a checker to not show directory files?>
     <tr>

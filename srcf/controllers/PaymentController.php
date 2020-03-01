@@ -15,7 +15,6 @@ class PaymentController extends Controller
         $amount = $_POST['amount'];
         $description = $_POST['description'];
 
-
         //echo $amount;    
         //echo "you are nowpaying";
         //still need to add the amount.

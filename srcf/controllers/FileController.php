@@ -7,17 +7,17 @@ class FileController extends Controller
         $user= Session::get('user')->getName();
         $userId=Session::get('user')->getId();
         
-        if(is_dir("filemanager/.$userId.id.$user.-folder") == false)
+        if(is_dir("srcf/filemanager/.$userId.id.$user.-folder") == false)
         {
         //create the folder for the specific user.
         //folder name will be userid.id.name.-folder
-            mkdir("filemanager/.$userId.id.$user.-folder");
+            mkdir("srcf/filemanager/.$userId.id.$user.-folder");
             return self::view("file");
         }
         else
         {
             //echo "it already exist";
-            $files = scandir("filemanager/.$userId.id.$user.-folder");
+            $files = scandir("srcf/filemanager/.$userId.id.$user.-folder");
             return self::view("file");
         }
     }
@@ -29,7 +29,7 @@ class FileController extends Controller
         $user= Session::get('user')->getName();
         $userId=Session::get('user')->getId();
 
-        $folder = 'filemanager/.'.$userId.'.id.'.$user.'.-folder/';
+        $folder = 'srcf/filemanager/.'.$userId.'.id.'.$user.'.-folder/';
         $target_file = $folder .basename($_FILES['fileToUpload']['name']);
         $uploadOk =1;
         $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
@@ -48,7 +48,7 @@ class FileController extends Controller
         $user= Session::get('user')->getName();
         $userId=Session::get('user')->getId();
 
-        $basedir = 'filemanager/.'.$userId.'.id.'.$user.'.-folder/';
+        $basedir = 'srcf/filemanager/.'.$userId.'.id.'.$user.'.-folder/';
         
         //$filename = $_GET['name'];
 
