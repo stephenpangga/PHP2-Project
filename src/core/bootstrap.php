@@ -4,14 +4,14 @@
 spl_autoload_register(function ($class_name)
 {
     //database folder
-    if(is_file('.////././src/core/database/' .$class_name. '.php'))
+    if(is_file('src/core/database/' .$class_name. '.php'))
     {
-        include_once '././src/core/database/' .$class_name. '.php';
+        include_once 'src/core/database/' .$class_name. '.php';
     }
     //core folder
-    else if(is_file('.////src/core/'. $class_name .'.php'))
+    else if(is_file('src/core/'. $class_name .'.php'))
     {
-        include_once './///src/core/'. $class_name .'.php';
+        include_once 'src/core/'. $class_name .'.php';
     }
     //router folder
     else if(is_file('src///////core/router/'. $class_name .'.php'))

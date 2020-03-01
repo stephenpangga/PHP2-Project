@@ -40,7 +40,7 @@ class Router
         $this->routes["POST"][$uri] = $controller;
     }
 
-    public function direct(array $uri, $requestType)
+    public function direct(array $uri, string $requestType)
     {
         //example: stephen.nl/controller/method/parameter
 

@@ -55,6 +55,8 @@ $routes = [
     "forget" => "ForgetPassController",
 
     //php 2
+    "pay" => "PaymentController",
+
     "file" => "FileController"
 
    // 'about' => 'controllers/about.php',
@@ -76,6 +78,8 @@ $routes = [
         "forget" => "ForgetPassController",
 
         "notes" => "NotesController",
+
+        "pay" => "PaymentController",
 
         "file"=>"FileController"
         
