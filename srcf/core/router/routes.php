@@ -57,7 +57,9 @@ $routes = [
     //php 2
     "pay" => "PaymentController",
 
-    "file" => "FileController"
+    "file" => "FileController",
+
+    "pdf"=> "PdfController"
 
    // 'about' => 'controllers/about.php',
 
@@ -81,7 +83,8 @@ $routes = [
 
         "pay" => "PaymentController",
 
-        "file"=>"FileController"
-        
+        "file"=>"FileController",
+
+        "pdf"=> "PdfController"
         ]
 ];

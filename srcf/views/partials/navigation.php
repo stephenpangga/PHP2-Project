@@ -51,9 +51,9 @@ li a:hover {
             <li><a href="/file"> Files </a></li>
             <li><a href ="http://connect-four69.herokuapp.com/"> Connect-4 </a></li>
             <li> <a href ="/pay"> Donate </a> </li>
+            <li><a href="/pdf">PDF</a></li>
         <?php endif;?>
         <li><a href="/contact">Contact</a></li>
         <li><a href="/about">About</a></li>
-        <li><a href="">PHP2</a></li>
     </ul>
 </nav>
